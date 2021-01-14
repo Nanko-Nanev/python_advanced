@@ -11,11 +11,13 @@ for i in range(n):
         if my_stack:
             my_stack.pop()
     elif input_command[0] == "3":
-        temp = [int(el) for el in my_stack]
-        print(max(temp))
+        if my_stack:
+            temp = [int(el) for el in my_stack]
+            print(max(temp))
     elif input_command[0] == "4":
-        temp_m = [int(el) for el in my_stack]
-        print(min(temp_m))
+        if my_stack:
+            temp_m = [int(el) for el in my_stack]
+            print(min(temp_m))
     else:
         pass
 
