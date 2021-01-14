@@ -1,33 +1,21 @@
 from collections import deque
 parentheses = deque(input())
-balanced = False
+unbalanced = 0
 
 while parentheses:
     first_ch = parentheses.popleft()
     last_ch = parentheses.pop()
 
-    if first_ch == "{":
-        if last_ch == "}":
-            balanced = True
-        else:
-            balanced = False
-            break
-    elif first_ch == "(":
-        if last_ch == ")":
-            balanced = True
-        else:
-            balanced = False
-            break
-    elif first_ch == "[":
-        if last_ch == "]":
-            balanced = True
-        else:
-            balanced = False
-            break
+    if (first_ch == "{" and last_ch == "}") or (first_ch == "}" and last_ch == "{"):
+        pass
+    elif (first_ch == "(" and last_ch == ")") or (first_ch == ")" and last_ch == "("):
+        pass
+    elif (first_ch == "[" and last_ch == "]") or (first_ch == "]" and last_ch == "["):
+        pass
     else:
+        unbalanced = 1
+        print("NO")
         break
 
-if balanced:
+if unbalanced == 0:
     print("YES")
-else:
-    print("NO")
