@@ -1,21 +1,21 @@
-brackets_data = list(input())
-brackets = []
+parentheses_data = list(input())
+parentheses = []
 
-for i in range(len(brackets_data)):
-    if brackets_data[i] in '([{':
-        brackets.append(brackets_data[i])
-    if brackets:
-        if brackets_data[i] == ')' and brackets[-1] == '(':
-            brackets.pop()
-        elif brackets_data[i] == ']' and brackets[-1] == '[':
-            brackets.pop()
-        elif brackets_data[i] == '}' and brackets[-1] == '{':
-            brackets.pop()
+for i in range(len(parentheses_data)):
+    if parentheses_data[i] in '([{':
+        parentheses.append(parentheses_data[i])
+    if parentheses:
+        if parentheses_data[i] == ')' and parentheses[-1] == '(':
+            parentheses.pop()
+        elif parentheses_data[i] == ']' and parentheses[-1] == '[':
+            parentheses.pop()
+        elif parentheses_data[i] == '}' and parentheses[-1] == '{':
+            parentheses.pop()
     else:
-        brackets.append(brackets_data[i])
+        parentheses.append(parentheses_data[i])
         break
 
-if len(brackets) != 0:
+if not len(parentheses) == 0:
     print('NO')
 else:
     print('YES')
