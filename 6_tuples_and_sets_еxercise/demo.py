@@ -1,0 +1,5 @@
+start, end = map(float, input().split())
+print(type(start))
+print(type(end))
+print(start)
+print(end)
